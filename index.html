@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- For navigation arrows and music icons -->
+</head>
+<body>
+    <!-- Music Player at the top right -->
+    <div class="music-player">
+        <!-- Added 'loop' attribute for continuous playback -->
+        <audio id="background-music" loop>
+             <!-- Update src to your actual music file path -->
+             <!-- Ensure this file is present for the music player to work -->
+             <source src="background_track.mp3" type="audio/mpeg">
+             <!-- Fallback for browsers that don't support the format -->
+             Your browser does not support the audio element.
+        </audio>
+        <button id="play-pause-btn"><i class="fas fa-play"></i></button>
+        <button id="mute-unmute-btn"><i class="fas fa-volume-up"></i></button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Time flies when you're having fun</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero quam tincidunt tortor magnis in leo magna arcu eu.<br>Massa et a sit odio ut at morbi at eros. Blandit suspendisse interdum.</p>
+        </header>
+
+        <!-- Timeline Section (MOVED ABOVE CAROUSEL) -->
+        <div class="timeline-section">
+            <button class="nav-arrow left-arrow"><i class="fas fa-chevron-left"></i></button>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                 <div class="timeline-events">
+                     <!-- Ensure the number of .timeline-event matches the number of .carousel-item -->
+                     <!-- Updated timeline labels to dates and ensure data-index is sequential -->
+                     <div class="timeline-event active" data-index="0">
+                         <div class="timeline-marker"></div>
+                         <div class="timeline-label">Jan 2023</div>
+                     </div>
+                      <div class="timeline-event" data-index="1">
+                         <div class="timeline-marker"></div>
+                         <div class="timeline-label">Aug 2023</div>
+                     </div>
+                       <div class="timeline-event" data-index="2">
+                         <div class="timeline-marker"></div>
+                         <div class="timeline-label">Apr 2024</div>
+                     </div>
+                       <div class="timeline-event" data-index="3">
+                         <div class="timeline-marker"></div>
+                         <div class="timeline-label">Nov 2024</div>
+                     </div>
+                        <div class="timeline-event" data-index="4">
+                         <div class="timeline-marker"></div>
+                         <div class="timeline-label">May 2025</div>
+                     </div>
+                      <!-- Add more events if needed, ensuring data-index is sequential and matching carousel items -->
+                 </div>
+            </div>
+            <button class="nav-arrow right-arrow"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+
+        <!-- Image Carousel (MOVED BELOW TIMELINE) -->
+        <div class="image-carousel">
+            <!-- Ensure the number of .carousel-item matches the number of .timeline-event -->
+            <!-- Updated image paths and descriptions - MAKE SURE THESE PATHS ARE CORRECT FOR YOU -->
+            <div class="carousel-item active" data-index="0">
+                <img src="Photos/image_1.png" alt="Scenic mountain view with forest.">
+                <div class="image-description">This event marks the beginning of our journey in January 2023.</div>
+            </div>
+             <div class="carousel-item" data-index="1">
+                <!-- Using the provided input_file_2.png (second image) as an example -->
+                <img src="input_file_2.png" alt="Person smiling wearing glasses.">
+                <div class="image-description">By August 2023, the project had reached a significant milestone.</div>
+            </div>
+             <div class="carousel-item" data-index="2">
+                 <!-- Using the first image again for testing -->
+                <img src="Photos/image_2.png" alt="Another placeholder image for event 3.">
+                 <div class="image-description">April 2024 brought new challenges and opportunities.</div>
+            </div>
+             <div class="carousel-item" data-index="3">
+                 <img src="Photos/image_3.png" alt="Another placeholder image for event 4.">
+                <div class="image-description">In November 2024, we celebrated a major achievement.</div>
+            </div>
+             <div class="carousel-item" data-index="4">
+                <img src="Photos/image_4.png" alt="Another placeholder image for event 5.">
+                 <div class="image-description">Looking forward to May 2025, a key date for future plans.</div>
+            </div>
+            <!-- Add more image items if needed, ensuring data-index is sequential and matching timeline events -->
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
