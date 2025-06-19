@@ -2,40 +2,42 @@ body {
     margin: 0;
     font-family: sans-serif;
     background-color: #0d1c28; /* Dark background color */
-    color: #e0e0e0; /* Light text color */
+    color: #e0e0e0; /* Light text color for overall page */
     display: flex;
     flex-direction: column; /* Stack items vertically */
     justify-content: flex-start; /* Align items to the top */
     align-items: center; /* Center items horizontally */
     min-height: 100vh;
-    padding: 20px; /* Adjusted padding */
+    padding: 10px; /* Adjusted base padding for mobile-first */
     box-sizing: border-box;
     position: relative; /* Needed for absolute positioning of music player */
     overflow-x: hidden; /* Prevent horizontal overflow */
+     /* Smooth scrolling for card list navigation */
+     scroll-behavior: smooth; /* Added smooth scrolling */
 }
 
 /* === Music Player Styles === */
 .music-player {
     position: fixed; /* Changed to fixed so it stays visible */
-    top: 20px;
-    right: 20px;
+    top: 10px; /* Adjusted top for mobile */
+    right: 10px; /* Adjusted right for mobile */
     z-index: 10;
     display: flex;
-    gap: 10px;
+    gap: 5px; /* Adjusted gap for mobile */
 }
 
 .music-player button {
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
     border-radius: 50%; /* Changed to fully round */
-    width: 40px; /* Increased button size */
-    height: 40px;
+    width: 35px; /* Adjusted size for mobile */
+    height: 35px; /* Adjusted size for mobile */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     color: #e0e0e0;
-    font-size: 1em;
+    font-size: 0.9em; /* Adjusted font size for mobile */
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
@@ -48,55 +50,56 @@ body {
 
 /* Increased container max-width */
 .container {
-    max-width: 1200px; /* Increased max-width for potentially larger active images */
+    max-width: 1200px;
     width: 100%;
     text-align: center;
-     margin-top: 60px; /* Add more space for the fixed music player */
+     margin-top: 50px; /* Add space for the fixed music player */
      box-sizing: border-box;
 }
 
 header {
-    margin-bottom: 40px; /* Keep space below header */
+    margin-bottom: 30px; /* Adjusted margin */
 }
 
 header h1 {
     color: #4dcfe0; /* Teal color for the title */
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 1.8em; /* Adjusted for mobile */
+    margin-bottom: 8px; /* Adjusted margin */
 }
 
 header p {
-    font-size: 1.1em;
-    line-height: 1.6;
+    font-size: 1em; /* Adjusted for mobile */
+    line-height: 1.5; /* Adjusted line height */
     color: #b0b0b0; /* Slightly lighter grey for subtitle */
+    padding: 0 10px; /* Add horizontal padding for smaller screens */
 }
 
-/* === Timeline Section Styles (Adjusted margins) === */
+/* === Timeline Section Styles (Positioning and base styles) === */
 .timeline-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-top removed as it's no longer needed below the header */
-     margin-bottom: 40px; /* Add space below timeline, before carousel */
-    padding: 0 20px;
+    margin-bottom: 30px; /* Space below timeline, before card list */
+    padding: 0 10px; /* Adjusted padding */
      width: 100%;
      max-width: 100%;
      box-sizing: border-box;
+     flex-shrink: 0; /* Prevent timeline from shrinking in vertical flex layout */
 }
 
 .nav-arrow {
      background-color: rgba(255, 255, 255, 0.1);
      border: none;
      border-radius: 50%;
-     width: 45px;
-     height: 45px;
+     width: 35px; /* Adjusted size for mobile */
+     height: 35px; /* Adjusted size for mobile */
      display: flex;
      justify-content: center;
      align-items: center;
      cursor: pointer;
      color: #e0e0e0;
-     font-size: 1.4em;
-     margin: 0 10px;
+     font-size: 1.1em; /* Adjusted font size */
+     margin: 0 5px; /* Adjusted margin */
      transition: background-color 0.3s ease, transform 0.1s ease;
      flex-shrink: 0;
 }
@@ -107,26 +110,27 @@ header p {
 .timeline-container {
     flex-grow: 1;
     position: relative;
-    height: 60px;
+    height: 50px; /* Adjusted height */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow-x: auto;
+    overflow-x: auto; /* Keep horizontal scroll for timeline */
+     scroll-behavior: smooth; /* Add smooth scrolling for timeline */
      -ms-overflow-style: none;
      scrollbar-width: none;
-     padding: 0 10px;
+     padding: 0 5px; /* Adjusted padding */
 }
 
 .timeline-container::-webkit-scrollbar { display: none; }
 
 .timeline-line {
     position: absolute;
-    width: calc(100% - 20px);
-    height: 4px;
+    width: calc(100% - 10px); /* Adjusted width */
+    height: 3px; /* Adjusted height */
     background-color: #b0b0b0;
-    top: 20px;
-    left: 10px;
-    right: 10px;
+    top: 15px; /* Adjusted position */
+    left: 5px; /* Adjusted position */
+    right: 5px; /* Adjusted position */
 }
 
 .timeline-events {
@@ -135,7 +139,7 @@ header p {
     align-items: center;
     width: fit-content; /* Allows horizontal scrolling based on content */
      padding: 0;
-    gap: 80px; /* Space between timeline events */
+    gap: 60px; /* Adjusted space between timeline events */
 }
 
 .timeline-event {
@@ -143,32 +147,32 @@ header p {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-     min-width: 50px; /* Give events a minimum width to prevent overlap */
+     min-width: 40px; /* Adjusted minimum width */
     flex-shrink: 0; /* Prevent shrinking */
     user-select: none;
 }
 
 .timeline-marker {
-    width: 12px;
-    height: 12px;
+    width: 10px; /* Adjusted size */
+    height: 10px; /* Adjusted size */
     background-color: #4dcfe0;
     border-radius: 50%;
     position: relative;
-    top: 20px;
-    margin-bottom: 10px;
+    top: 15px; /* Adjusted position */
+    margin-bottom: 5px; /* Adjusted spacing */
     z-index: 1;
     transition: all 0.3s ease;
 }
 
 .timeline-event.active .timeline-marker {
     background-color: #ffc107;
-    width: 16px;
-    height: 16px;
+    width: 14px; /* Adjusted size */
+    height: 14px; /* Adjusted size */
     box-shadow: 0 0 10px #ffc107;
 }
 
 .timeline-label {
-    font-size: 0.9em;
+    font-size: 0.7em; /* Adjusted font size */
     color: #b0b0b0;
     margin-top: 5px; /* Added spacing */
     white-space: nowrap; /* Prevent label wrapping */
@@ -179,311 +183,152 @@ header p {
     font-weight: bold;
 }
 
-/* === Image Carousel Styles (Adjusted margins and transitions) === */
-.image-carousel {
-    display: flex;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    scroll-behavior: smooth;
-    /* flex-start aligns items to the start, crucial for scrolling */
-    justify-content: flex-start;
-    gap: 20px;
-    /* Adjusted padding for scroll indicators and below, added top margin */
-    padding: 0 20px 20px;
-     margin-top: 40px; /* Add space above carousel, below timeline */
 
-     /* Hide scrollbar */
-     -ms-overflow-style: none;
-     scrollbar-width: none;
-     /* Align items to their top edges */
-     align-items: flex-start; /* Crucial for items with varying heights */
+/* === Image Card List Styles (New vertical layout) === */
+.image-card-list {
+    display: block; /* Stack cards vertically */
+    width: 100%; /* Take full width within container */
+    max-width: 500px; /* Max width for the list itself on larger screens */
+    margin: 30px auto; /* Space above/below, center the block */
+    padding: 0 10px; /* Padding on sides within the container */
+    box-sizing: border-box;
 }
 
-.image-carousel::-webkit-scrollbar {
-    display: none;
+/* === Individual Image Card Styles (New design) === */
+.image-card {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin-bottom: 20px; /* Space between cards */
+    overflow: hidden; /* Hide content overflowing rounded corners */
+    width: 100%; /* Take full width of the list container */
+    max-width: 100%; /* Ensure it doesn't exceed list width */
+    cursor: pointer; /* Indicate clickable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover/active effects */
 }
 
-.carousel-item {
-    /* Default State: Image centered, description overlayed bottom (opacity 0) */
-    position: relative; /* Container for absolute children */
-    overflow: hidden; /* Clip corners */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-
-    /* --- Base Size and Aspect Ratio for Non-Active Items --- */
-    /* Use flex-basis for a fixed non-active item width */
-    flex: 0 0 250px; /* Non-active items have a base width of 250px */
-    width: 250px; /* Redundant but good fallback/clarity */
-    height: auto; /* Height follows aspect ratio when using aspect-ratio prop */
-    aspect-ratio: var(--aspect-ratio, 16 / 9); /* Aspect ratio set by JS, default landscape */
-
-    opacity: 0.7; /* Slightly faded when not active */
-    /* === UPDATED TRANSITION PROPERTY === */
-    transition: all 0.5s ease-in-out; /* shorthand for combined transition properties */
-    /* Be explicit about what should transition */
-    transition-property: opacity, transform, box-shadow, width, height, flex-basis, aspect-ratio;
-
-    /* Placeholder background/styling before image loads or if error */
-     background-color: rgba(255, 255, 255, 0.05);
-     display: flex; /* Center content like "Loading..." */
-     justify-content: center;
-     align-items: center;
-     color: rgba(255, 255, 255, 0.5); /* Placeholder text color */
-     font-size: 0.9em;
+.image-card:hover {
+     transform: translateY(-3px); /* Slight lift effect on hover */
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
 }
-/* Placeholder styling for missing/error images */
-.carousel-item.image-load-error {
-    border: 2px dashed rgba(255, 0, 0, 0.5);
-     color: rgba(255, 0, 0, 0.7);
-     /* Remove background overlay if you want to see the dashed border clearly */
-     background-color: rgba(255, 0, 0, 0.05);
-}
-.carousel-item.image-load-error::before {
-    content: "Image Failed to Load"; /* Content for error state */
-    position: static; /* Revert from absolute */
-     margin: auto; /* Center text */
-}
-.carousel-item.image-load-error img {
-    display: none; /* Hide broken image icon */
+
+.image-card.active {
+     /* Add a visual cue for the active card synced with the timeline */
+     box-shadow: 0 8px 15px rgba(255, 193, 7, 0.3); /* Highlight with accent color */
+     border: 2px solid #ffc107; /* Optional: Add a border highlight */
+     transform: scale(1.01); /* Slightly enlarge active card */
 }
 
 
-.carousel-item img {
-    display: block;
-    /* Fill the entire relative parent (.carousel-item) while maintaining aspect ratio */
-    position: absolute; /* Position absolutely inside the relative parent */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Crucial: Maintain image aspect ratio within 100% bounds without distortion */
-    border-radius: 8px; /* Keep rounded corners */
-    color: transparent; /* Hide broken image icon's effect - or set alt text correctly */
-    /* Added z-index lower than description */
-    z-index: 0;
-}
-
-.image-description {
-    /* Default State: Overlayed at the bottom, hidden */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%; /* Fill parent width */
-    max-height: 100%; /* Don't exceed parent height */
-    box-sizing: border-box; /* Include padding in width/height calculation */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
-    color: white;
-    padding: 10px;
+/* --- Image within the card --- */
+.image-card img {
+    display: block; /* Remove extra space below image */
+    width: 100%; /* Image takes full width of the card */
+    /* Use object-fit cover and a defined height to crop and fill the space */
+    height: 200px; /* Fixed height for the image area */
+    object-fit: cover; /* Crop image to cover the space while maintaining aspect ratio */
+    border-radius: 8px 8px 0 0; /* Apply border radius only to top corners */
+    /* Ensure image placeholder styling looks okay on white background */
+    color: #ccc; /* Placeholder text color if image broken */
     text-align: center;
+    font-size: 1em;
+}
+
+/* Style for placeholder/error state on the light background */
+.image-card.image-load-error img {
+    display: block; /* Ensure block is used for sizing */
+     /* height might be set to 200px already */
+     /* Use dashed border or specific background color */
+     background-color: #eee;
+     border: 2px dashed #f00;
+     padding: 20px; /* Add padding around the error text */
+     box-sizing: border-box;
+     object-fit: contain; /* Revert to contain for the error text */
+}
+
+.image-card.image-load-error img::before {
+     content: "Image Failed to Load"; /* Text should ideally be outside img */
+     /* This content rule won't work on an actual <img>. Needs an outer div. */
+     /* Better: Handle placeholder text/error message in the .card-text-content or an overlay div */
+}
+/* Let's handle the error message via card-text-content */
+.image-card.image-load-error .card-text-content::before {
+     content: "Image above failed to load.";
+     display: block;
+     color: #f00;
+     margin-bottom: 10px;
+     font-style: italic;
+}
+
+
+/* --- Text content below the image --- */
+.card-text-content {
+    padding: 15px; /* Padding inside the text area */
+    text-align: left; /* Align text left as in the example */
+    color: #333333; /* Dark text color for readability on white background */
+}
+
+.card-text-content .card-title {
+    margin-top: 0;
+    margin-bottom: 5px; /* Space below title */
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0d1c28; /* Even darker color for title */
+}
+
+.card-text-content .card-description {
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 0.9em;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease, padding 0.3s ease; /* Add padding to transition */
-    pointer-events: none; /* Don't block clicks on non-active items */
-    z-index: 1; /* Ensure it's above the image */
-    border-radius: 0 0 8px 8px; /* Rounded corners at the bottom */
-    overflow-y: auto; /* Allow description scrolling if it's long */
-    -ms-overflow-style: none; /* Hide scrollbar */
-    scrollbar-width: none;
-     /* Use display flex and center for vertical alignment if description is short */
-     display: flex;
-     flex-direction: column;
-     justify-content: center; /* Center vertically within the overlay area */
-     align-items: center;
-}
-.image-description::-webkit-scrollbar { display: none; }
-
-
-/* === Active Item Styles (Base: Mobile Active) === */
-/* In the active state without the desktop media query, the description overlays the image */
-.carousel-item.active {
-    opacity: 1; /* Fully visible when active */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-     transform: scale(1.05); /* Slightly larger by default (applied here for mobile active) */
-     z-index: 5; /* Bring active item to front */
-
-     /* Default Active State (including mobile): Make the description visible overlay */
-     /* Position and size properties remain as per base .image-description */
-     .image-description {
-         opacity: 1;
-         pointer-events: auto; /* Allow interaction with scrollable description */
-     }
-
-     /* === UPDATED TRANSITION PROPERTY === */
-      transition: all 0.5s ease-in-out;
-      /* Be explicit about what should transition for active state as well */
-      transition-property: opacity, transform, box-shadow, width, height, flex-basis, aspect-ratio;
-
+    line-height: 1.4;
+    color: #555; /* Slightly lighter dark color for description */
 }
 
 
-/* === Active Item Styles (Desktop: Side-by-side layout without black bars) === */
+/* === Desktop Responsiveness adjustments === */
 @media (min-width: 769px) {
-    /* --- Adjust non-active item width on Desktop if desired --- */
-    .carousel-item {
-         flex: 0 0 280px; /* Slightly larger non-active items on desktop */
-         width: 280px; /* Fallback/clarity */
-         aspect-ratio: var(--aspect-ratio, 16/9); /* Still uses calculated aspect ratio */
-          transform: scale(1); /* Ensure non-active isn't scaled on desktop */
-          /* Reset mobile transition property here to inherit the desktop one */
-          transition-property: opacity, transform, box-shadow, width, height, flex-basis, aspect-ratio;
+    body { padding: 20px; } /* Restore desktop padding */
+
+    .music-player { top: 20px; right: 20px; gap: 10px; } /* Restore desktop sizes/positions */
+    .music-player button { width: 40px; height: 40px; font-size: 1em; }
+
+    .container { margin-top: 60px; padding: 0; /* Remove container padding */ }
+
+    header { margin-bottom: 40px; }
+    header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    header p { font-size: 1.1em; line-height: 1.6; padding: 0; }
+
+    /* Restore timeline desktop spacing */
+    .timeline-section { margin-bottom: 40px; padding: 0 20px; }
+    .nav-arrow { width: 45px; height: 45px; font-size: 1.4em; margin: 0 10px; }
+    .timeline-container { height: 60px; padding: 0 10px; }
+    .timeline-line { top: 20px; left: 10px; right: 10px; width: calc(100% - 20px); height: 4px;}
+    .timeline-event { min-width: 50px; }
+     .timeline-marker { top: 20px; width: 12px; height: 12px; margin-bottom: 10px; }
+     .timeline-event.active .timeline-marker { width: 16px; height: 16px; }
+     .timeline-label { font-size: 0.9em; }
+     .timeline-events { gap: 80px; }
+
+
+    /* Image Card List: Adjust max-width, remove padding, etc. for desktop */
+    .image-card-list {
+         /* Max width stays, margin auto centers */
+         margin-top: 40px; /* Restore space */
+         padding: 0; /* Remove side padding if container is centered */
     }
 
-
-    /* --- Active Item: Flex Container Layout --- */
-    .carousel-item.active {
-        /* Remove transform scale when switching to flex sizing */
-        transform: none;
-        /* Override aspect-ratio property for the active flex container */
-        aspect-ratio: auto; /* Allow height to be determined by content */
-        height: auto; /* Height determined by flex children */
-
-        display: flex; /* Enable flexbox for side-by-side */
-        flex-direction: row; /* Image Left, Description Right */
-        align-items: stretch; /* Stretch description height to match image/container height */
-        justify-content: space-between;
-
-        /* Set a fixed width for the active item on desktop */
-        width: var(--active-item-width-desktop, 700px); /* Target width */
-        max-width: calc(100% - 40px); /* Ensure it doesn't exceed container with padding/margin */
-        padding: 0; /* Remove padding that might interfere with flex layout */
-        border-radius: 8px; /* Keep outer rounded corners */
-        min-height: auto; /* Ensure flex container height is determined by content */
-        /* Added overflow hidden for this flex container */
-         overflow: hidden;
-
-        /* Reset mobile transition property here to inherit the desktop one */
-         transition-property: opacity, transform, box-shadow, width, height, flex-basis, aspect-ratio;
-
-         /* Hide overlay description from base state */
-         .image-description { opacity: 0; }
+    /* Image Card: Allow them to be wider on desktop */
+    .image-card {
+        max-width: 600px; /* Allow cards to be wider */
+        margin-left: auto; /* Center cards if max-width is set */
+        margin-right: auto;
     }
-
-    /* --- Image as Flex Item --- */
-    .carousel-item.active img {
-        position: static; /* Revert from absolute positioning */
-        display: block;
-
-        /* Image takes 60% of the active container's WIDTH */
-        width: 60%;
-        /* Auto height lets the image's natural aspect ratio determine its height
-           based on the given 60% width */
-        height: auto;
-
-        /* Crucial: object-fit: contain ensures the image CONTENT maintains its
-           aspect ratio within the flexible auto-height area. The black bars
-           are now gone because the container height adapts. */
-        object-fit: contain;
-        border-radius: 8px 0 0 8px; /* Rounded corners left only */
-        min-height: 0; /* Prevent issues with flex children min-size */
-        max-height: 100%; /* Constrain image height within its flex allocation */
-        align-self: center; /* Center vertically in case height calculation is weird */
-         /* Removed z-index as static positioned flex item doesn't need it here */
-         z-index: auto;
-     }
-
-     /* --- Description as Flex Item --- */
-    .carousel-item.active .image-description {
-        position: static; /* Revert from absolute overlay */
-        flex: 1; /* Takes the remaining width */
-        width: auto; /* Override default 100% width */
-        height: 100%; /* Takes full height of the active container (set by flex-stretch) */
-        opacity: 1; /* Ensure visibility (should be inherited) */
-        pointer-events: auto; /* Allow interaction */
-
-        background-color: rgba(0, 0, 0, 0.9); /* More solid background */
-        color: white;
-        padding: 20px; /* Increase padding for the side panel */
-        text-align: left; /* Align description text to the left */
-        overflow-y: auto; /* Enable scrolling */
-        border-radius: 0 8px 8px 0; /* Rounded corners right only */
-        min-height: 0; /* Prevent issues with flex children min-size */
-         /* Remove flex properties for centering as content takes 100% height now */
-         display: block;
-         justify-content: start; /* Default align-items: stretch handles vertical fill */
-         align-items: stretch; /* Default align-items: stretch is sufficient */
+    /* Increase image height on wider cards if desired */
+    .image-card img {
+        height: 250px; /* Example: taller image on desktop */
     }
-}
+    .card-text-content { padding: 20px; /* More padding on desktop */ }
+    .card-text-content .card-title { font-size: 1.3em; }
+     .card-text-content .card-description { font-size: 1em; }
 
-
-/* === Mobile Responsiveness adjustments === */
-@media (max-width: 768px) {
-    body { padding: 10px; }
-
-    .music-player { top: 10px; right: 10px; gap: 5px; }
-    .music-player button { width: 35px; height: 35px; font-size: 0.9em; }
-
-    .container { margin-top: 50px; padding: 0 10px; } /* Added padding */
-
-    header h1 { font-size: 1.8em; }
-    header p { font-size: 1em; }
-
-     /* Adjusted margins */
-     .timeline-section { margin-bottom: 30px; }
-     .image-carousel { margin-top: 30px; }
-
-
-    .image-carousel {
-        gap: 10px; /* Reduced gap */
-        padding: 0 10px 10px; /* Adjusted padding */
-        /* Allow items to take up a portion of screen width when non-active on mobile */
-         /* Non-active items width managed by flex-basis below */
-         justify-content: center; /* Keep centered initially on mobile if items fit */
-    }
-
-    .carousel-item {
-        /* Adjust non-active size for mobile */
-        flex: 0 0 200px; /* Smaller non-active items on mobile */
-        width: 200px; /* Fallback */
-         /* aspect-ratio still controlled by JS */
-        border-radius: 5px;
-         /* Ensure transition property is set correctly for mobile */
-          transition-property: opacity, transform, box-shadow, width, height, flex-basis, aspect-ratio;
-    }
-
-     /* --- Mobile Active State: Overlay Description --- */
-     /* Uses base .carousel-item.active + some overrides */
-     .carousel-item.active {
-         /* Override desktop active style transform */
-         transform: none; /* Remove scale on mobile active */
-
-         /* Make active item take more screen width on mobile */
-         width: 90vw; /* Take up 90% of viewport width */
-         /* Height follows content */
-         height: auto;
-          /* No aspect ratio set explicitly on active mobile container */
-         aspect-ratio: auto; /* Override inherited aspect ratio */
-
-         /* Re-enable display/flex properties from base if disabled by desktop flex (shouldn't be needed with @media specificity) */
-         /* Removed redundant display/flex settings */
-
-         /* Make sure it's not using flex-basis to limit size like non-active */
-         flex: 0 0 auto; /* Allow active item to size based on width */
-
-          /* Ensure transition property is set correctly for mobile */
-          transition-property: opacity, transform, box-shadow, width, height, flex-basis, aspect-ratio;
-
-          /* Ensure overflow is hidden on mobile active item too */
-          overflow: hidden;
-
-     }
-
-     /* Mobile description styling remains based on base .image-description
-        and .carousel-item.active .image-description rules */
-     .image-description {
-         border-radius: 0 0 5px 5px;
-         padding: 8px;
-         font-size: 0.85em;
-         background-color: rgba(0, 0, 0, 0.7); /* Ensure transparency for overlay */
-     }
-
-
-    .timeline-section { padding: 0 10px; }
-     .nav-arrow { width: 35px; height: 35px; font-size: 1.1em; margin: 0 5px; }
-     .timeline-container { padding: 0 5px; height: 50px; }
-     .timeline-line { top: 15px; left: 5px; right: 5px; width: calc(100% - 10px); }
-     .timeline-event { min-width: 40px; }
-     .timeline-marker { top: 15px; width: 10px; height: 10px; margin-bottom: 5px; }
-     .timeline-event.active .timeline-marker { width: 14px; height: 14px; }
-     .timeline-label { font-size: 0.7em; white-space: nowrap; }
-     .timeline-events { gap: 60px; } /* Adjusted gap */
 }
