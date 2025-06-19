@@ -28,7 +28,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero quam tincidunt tortor magnis in leo magna arcu eu.<br>Massa et a sit odio ut at morbi at eros. Blandit suspendisse interdum.</p>
         </header>
 
-        <!-- Timeline Section (MOVED ABOVE CAROUSEL) -->
+        <!-- Timeline Section -->
         <div class="timeline-section">
             <button class="nav-arrow left-arrow"><i class="fas fa-chevron-left"></i></button>
             <div class="timeline-container">
@@ -36,23 +36,24 @@
                  <div class="timeline-events">
                      <!-- Ensure the number of .timeline-event matches the number of .carousel-item -->
                      <!-- Updated timeline labels to dates and ensure data-index is sequential -->
-                     <div class="timeline-event active" data-index="0">
+                     <!-- Add a data-title attribute here if you want to explicitly link titles -->
+                     <div class="timeline-event active" data-index="0" data-card-title="Beginning our journey">
                          <div class="timeline-marker"></div>
                          <div class="timeline-label">Jan 2023</div>
                      </div>
-                      <div class="timeline-event" data-index="1">
+                      <div class="timeline-event" data-index="1" data-card-title="Milestone reached">
                          <div class="timeline-marker"></div>
                          <div class="timeline-label">Aug 2023</div>
                      </div>
-                       <div class="timeline-event" data-index="2">
+                       <div class="timeline-event" data-index="2" data-card-title="New challenges">
                          <div class="timeline-marker"></div>
                          <div class="timeline-label">Apr 2024</div>
                      </div>
-                       <div class="timeline-event" data-index="3">
+                       <div class="timeline-event" data-index="3" data-card-title="Major achievement">
                          <div class="timeline-marker"></div>
                          <div class="timeline-label">Nov 2024</div>
                      </div>
-                        <div class="timeline-event" data-index="4">
+                        <div class="timeline-event" data-index="4" data-card-title="Looking ahead">
                          <div class="timeline-marker"></div>
                          <div class="timeline-label">May 2025</div>
                      </div>
@@ -63,31 +64,47 @@
         </div>
 
 
-        <!-- Image Carousel (MOVED BELOW TIMELINE) -->
-        <div class="image-carousel">
+        <!-- Image List (formerly Carousel) - Now a vertical stack of cards -->
+        <!-- No longer need 'image-carousel' if it's a simple list -->
+        <div class="image-card-list"> <!-- Renamed class for clarity -->
             <!-- Ensure the number of .carousel-item matches the number of .timeline-event -->
             <!-- Updated image paths and descriptions - MAKE SURE THESE PATHS ARE CORRECT FOR YOU -->
-            <div class="carousel-item active" data-index="0">
+            <div class="image-card" data-index="0"> <!-- Renamed class -->
                 <img src="Photos/image_1.png" alt="Scenic mountain view with forest.">
-                <div class="image-description">This event marks the beginning of our journey in January 2023.</div>
+                <div class="card-text-content"> <!-- New wrapper for text -->
+                     <h4 class="card-title">Beginning our journey</h4> <!-- Title -->
+                     <p class="card-description">This event marks the beginning of our journey in January 2023.</p> <!-- Description -->
+                 </div>
             </div>
-             <div class="carousel-item" data-index="1">
-                <!-- Using the provided input_file_2.png (second image) as an example -->
+             <div class="image-card" data-index="1"> <!-- Renamed class -->
+                <!-- Using the provided input_file_2.png (second image from user's input) -->
                 <img src="input_file_2.png" alt="Person smiling wearing glasses.">
-                <div class="image-description">By August 2023, the project had reached a significant milestone.</div>
+                <div class="card-text-content"> <!-- New wrapper for text -->
+                     <h4 class="card-title">Milestone reached</h4> <!-- Title -->
+                     <p class="card-description">By August 2023, the project had reached a significant milestone.</p> <!-- Description -->
+                 </div>
             </div>
-             <div class="carousel-item" data-index="2">
+             <div class="image-card" data-index="2"> <!-- Renamed class -->
                  <!-- Using the first image again for testing -->
                 <img src="Photos/image_2.png" alt="Another placeholder image for event 3.">
-                 <div class="image-description">April 2024 brought new challenges and opportunities.</div>
+                 <div class="card-text-content"> <!-- New wrapper for text -->
+                     <h4 class="card-title">New challenges</h4> <!-- Title -->
+                    <p class="card-description">April 2024 brought new challenges and opportunities.</p> <!-- Description -->
+                 </div>
             </div>
-             <div class="carousel-item" data-index="3">
+             <div class="image-card" data-index="3"> <!-- Renamed class -->
                  <img src="Photos/image_3.png" alt="Another placeholder image for event 4.">
-                <div class="image-description">In November 2024, we celebrated a major achievement.</div>
+                 <div class="card-text-content"> <!-- New wrapper for text -->
+                      <h4 class="card-title">Major achievement</h4> <!-- Title -->
+                     <p class="card-description">In November 2024, we celebrated a major achievement.</p> <!-- Description -->
+                 </div>
             </div>
-             <div class="carousel-item" data-index="4">
+             <div class="image-card" data-index="4"> <!-- Renamed class -->
                 <img src="Photos/image_4.png" alt="Another placeholder image for event 5.">
-                 <div class="image-description">Looking forward to May 2025, a key date for future plans.</div>
+                 <div class="card-text-content"> <!-- New wrapper for text -->
+                      <h4 class="card-title">Looking ahead</h4> <!-- Title -->
+                     <p class="card-description">Looking forward to May 2025, a key date for future plans.</p> <!-- Description -->
+                 </div>
             </div>
             <!-- Add more image items if needed, ensuring data-index is sequential and matching timeline events -->
         </div>
